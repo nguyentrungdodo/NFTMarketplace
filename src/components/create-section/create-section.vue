@@ -251,7 +251,6 @@ export default {
             size:this.size,
             image:this.uploadImage,
         }
-        console.log('form Data',media)
         this.createMedia(media);
     },
     async handleImageUpload (){
@@ -259,7 +258,6 @@ export default {
       // const url = `${process.env.VUE_APP_SERVER}/form/upload/${this.$route.params.id}`;
       const res = await uploadCloudinary(file);
       this.uploadImage  = res.data.secure_url;
-      console.log('res',res);
     //   this.$emit('closeLoader');
     }
   },

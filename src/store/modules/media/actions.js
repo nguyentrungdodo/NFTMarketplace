@@ -14,9 +14,7 @@ const actions = {
   },
 
   'media/ACT_FETCH_ALL_MEDIA': async ({ commit }) => {
-    console.log('11111');
     const res = await fetchMedia();
-    console.log('res',res.data);
     if (res.status === 200) {
       const data = res.data;
       // const media = JSON.parse(data);
@@ -29,9 +27,7 @@ const actions = {
   },
 
   'media/ACT_FETCH_MEDIA': async ({ commit }) => {
-    console.log('11111');
     const res = await fetchMedia();
-    console.log('res',res.data);
     if (res.status === 200) {
       const data = res.data;
       // const media = JSON.parse(data);
@@ -43,9 +39,7 @@ const actions = {
     }
   },
   'media/ACT_FETCH_MEDIA_BY_ID': async ({ commit },id) => {
-    console.log('11111');
     const res = await getOne(id);
-    console.log('res',res.data);
     if (res.status === 200) {
       const data = res.data;
       // const media = JSON.parse(data);

@@ -166,16 +166,13 @@ export default {
             description:this.description,
             image:this.uploadImage,
         }
-        console.log('form Data',media)
         this.createBlog(media);
     },
     async handleImageUpload (){
       const file = document.getElementById('files').files[0];
-      console.log('file',file);
       // const url = `${process.env.VUE_APP_SERVER}/form/upload/${this.$route.params.id}`;
       const res = await uploadCloudinary(file);
       this.uploadImage  = res.data.secure_url;
-      console.log('res',res);
     //   this.$emit('closeLoader');
     }
   },

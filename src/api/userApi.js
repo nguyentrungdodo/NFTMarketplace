@@ -19,4 +19,7 @@ const signin = (data) => {
 const signup = (data) => {
   return apiUtils.postRequest(`${USER}/signup`, data);
 };
-export { saveSignup, checkWallet, signinWallet,signup,signin };
+const getMe = () =>{
+  return apiUtils.getRequest(`${USER}/me`);
+}
+export { saveSignup, checkWallet, signinWallet,signup,signin,getMe };

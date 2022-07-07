@@ -131,7 +131,7 @@ export default {
       if (result) {
         this.$router.replace('/');
       }
-      console.log("result", result);
+      ("result", result);
     },
   },
 };

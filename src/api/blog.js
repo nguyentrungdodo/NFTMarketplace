@@ -1,7 +1,7 @@
 import apiUtils from "@/utils/utils-api";
 const BLog_URL = "blog";
 
-const getOne = (id) => {
+const fetchBlog = (id) => {
   return apiUtils.getRequest(`${BLog_URL}/${id}`);
 };
 
@@ -25,7 +25,7 @@ const createBlog = (form) => {
   return apiUtils.postRequest(`${BLog_URL}`, form);
 };
 export {
-  getOne,
+  fetchBlog,
   updateOne,
   deleteOne,
   save,

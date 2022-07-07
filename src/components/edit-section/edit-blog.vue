@@ -6,7 +6,7 @@
           <!-- Author Profile -->
           <div class="card no-hover text-center">
             <div class="image-over">
-              <img class="card-img-top" :src="uploadImage?uploadImage:'assets/img/auction_2.jpg'" alt="" />
+              <img class="card-img-top" :src="uploadImage" alt="" />
               <!-- Author -->
               <div class="author">
                 <!-- <div class="author-thumb avatar-lg">
@@ -16,7 +16,7 @@
                     alt=""
                   />
                 </div> -->
-              <!-- nho mo unlock ra -->
+                <!-- nho mo unlock ra -->
               </div>
             </div>
             <!-- Card Caption -->
@@ -131,8 +131,11 @@
               </div>
 
               <div class="col-12">
-                <button @click.prevent="handleCreate()" class="btn w-100 mt-3 mt-sm-4" >
-                  Create Blog
+                <button
+                  @click.prevent="handleUpdate()"
+                  class="btn w-100 mt-3 mt-sm-4"
+                >
+                  Update Blog
                 </button>
               </div>
             </div>
@@ -144,40 +147,49 @@
 </template>
 
 <script>
-import {  mapActions } from "vuex";
-import uploadCloudinary from "@/api/cloudinary"
+import { mapActions, mapGetters } from "vuex";
+import uploadCloudinary from "@/api/cloudinary";
+import { fetchBlog } from "@/api/blog";
 export default {
-  name: "EditBlog",
+  name: "CreateSection",
   components: {},
   data() {
     return {
       title: "",
       description: "",
-      uploadImage:"",
+      uploadImage: "",
     };
   },
   methods: {
     ...mapActions({
-      createBlog: "blog/ACT_CREATE_BLOG",
+      fetchBlog: "blog/ACT_FETCH_BLOG",
+      editBlog:"blog/ACT_EDIT_BLOG"
     }),
-    handleCreate(){
-        const media = {
-            title:this.title,
-            description:this.description,
-            image:this.uploadImage,
-        }
-        console.log('form Data',media)
-        this.createBlog(media);
+    ...mapGetters({
+      blog: "blog/GET_BLOG_BY_ID",
+    }),
+    handleUpdate() {
+      const blog = {
+        title: this.title,
+        description: this.description,
+        image: this.uploadImage,
+      };
+      this.editBlog({id:this.$route.params.id,blog:blog});
     },
-    async handleImageUpload (){
-      const file = document.getElementById('files').files[0];
-      console.log('file',file);
+    async handleImageUpload() {
+      const file = document.getElementById("files").files[0];
       // const url = `${process.env.VUE_APP_SERVER}/form/upload/${this.$route.params.id}`;
       const res = await uploadCloudinary(file);
-      this.uploadImage  = res.data.secure_url;
-      console.log('res',res);
-    //   this.$emit('closeLoader');
-    }
+      this.uploadImage = res.data.secure_url;
+      //   this.$emit('closeLoader');
+    },
+  },  
+  async created() {
+    const id = this.$route.params.id;
+    const {data} = await fetchBlog(id);
+    this.title = data.title;
+    this.description = data.description;
+    this.uploadImage = data.image;
   },
 };
 </script>

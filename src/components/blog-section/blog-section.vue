@@ -2,67 +2,6 @@
   <section class="blog-area pt-0 load-more">
     <div class="container">
       <div class="row items">
-        <div class="col-12 col-md-4 item">
-          <!-- Single Blog -->
-          <div class="card blog-card">
-            <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_1.jpg" alt=""
-              /></a>
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <!-- Meta Info -->
-              <ul
-                class="meta-info d-flex justify-content-between list-unstyled mt-4"
-              >
-                <li>By <a href="author">Junaid Hasan</a></li>
-                <li><a href="blog-single">Feb 19, 2022</a></li>
-              </ul>
-              <!-- Blog Title -->
-              <a href="blog-single">
-                <h4>Decentralizing NFT metadata on NetStorm</h4>
-              </a>
-              <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
-              </p>
-              <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 item">
-          <!-- Single Blog -->
-
-          <div class="card blog-card">
-            <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_2.jpg" alt=""
-              /></a>
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <!-- Meta Info -->
-              <ul
-                class="meta-info d-flex justify-content-between list-unstyled mt-4"
-              >
-                <li>By <a href="author">Junaid Hasan</a></li>
-                <li><a href="blog-single">Feb 19, 2022</a></li>
-              </ul>
-              <!-- Blog Title -->
-              <a href="blog-single">
-                <h4>The Lost Art Of Photography</h4>
-              </a>
-              <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
-              </p>
-              <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
-            </div>
-          </div>
-        </div>
         <div
           v-for="blog in blogList"
           :key="blog.id"
@@ -72,7 +11,7 @@
           <div @click="handleOpenPopup(blog.id)" class="icon-delete">
             <i class="fa fa-remove" aria-hidden="true"></i>
           </div>
-          <div @click="handleOpenPopup(blog.id)" class="icon-delete icon-edit">
+          <div @click="handleEdit(blog.id)" class="icon-delete icon-edit">
             <i class="fa fa-edit" aria-hidden="true"></i>
           </div>
 
@@ -104,7 +43,6 @@
             </div>
           </div>
         </div>
-
         <!-- <cardBlog
           v-for="(blog, index) in blogs"
           :key="index"
@@ -130,7 +68,7 @@
     <div v-if="dialogDelete" class="overlay">
       <div class="popup">
         <h3>Do you want to delete this blog</h3>
-        <a class="close" @click="handleClosePopup" href="#">&times;</a>
+        <a class="close" @click="handleClosePopup" >&times;</a>
 
         <div class="button-group">
           <a @click="handleClosePopup" class="btn btn-bordered-white"
@@ -164,18 +102,19 @@ export default {
     }),
     handleOpenPopup(id) {
       this.idBlog = id;
-      console.log("11111", id);
       this.dialogDelete = true;
     },
     handleClosePopup() {
       this.dialogDelete = false;
     },
     async handleDeleteConfirm() {
-      console.log("222222222222222", this.idBlog);
       await this.deleteBlogById(this.idBlog);
       await this.getAllBlogs();
       this.dialogDelete = false;
     },
+    handleEdit(id){
+      this.$router.push({name:'edit-blog',params:{id}})
+    }
   },
   computed: {
     ...mapGetters({

@@ -127,9 +127,14 @@
         <!-- Navbar Action Button -->
         <ul class="navbar-nav action">
           <li class="nav-item ml-3">
-            <a href="/wallet-connect" class="btn ml-lg-auto btn-bordered-white"
-              ><i class="icon-wallet mr-md-2"></i>Wallet Connect</a
+            <div
+              v-if="isConnectedWallet === false"
+              @click="connectWallet()"
+              class="btn ml-lg-auto btn-bordered-white"
             >
+              <i class="icon-wallet mr-md-2"></i>Wallet Connect
+            </div>
+            <p v-else>{{ address }}</p>
           </li>
           <li v-if="!userName" class="nav-item iconLogin">
             <a href="/login" class="nav-link"><span>Login</span> </a>
@@ -150,7 +155,7 @@
 <script>
 import { mapGetters } from "vuex";
 import jwt_decode from "jwt-decode";
-
+// import { ethers } from "ethers";
 import localStorageService from "@/utils/localStorage.js";
 export default {
   name: "HeaderSection",
@@ -158,11 +163,12 @@ export default {
     return {
       isOnTop: false,
       haveBackground: false,
+      isConnectedWallet: false,
       position: window.top.scrollY,
       userName: "",
+      address: "",
     };
   },
-
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
   },
@@ -179,23 +185,35 @@ export default {
       } else if (scroll > this.position) {
         this.haveBackground = false;
       }
-      // console.log(this.haveBackground)
-      // console.log(this.position)
       this.position = scroll;
     },
-    handleMouseDown() {
-      console.log("mouse");
-    },
+    handleMouseDown() {},
     handleLogout() {
       localStorageService.getService().clearToken();
-      this.$router.reppace('/home');
+      this.$router.reppace("/home");
+    },
+    async connectWallet() {
+      this.isConnectedWallet = true;
+      if (typeof window.ethereum !== "undefined") {
+        try {
+          await window.ethereum.request({ method: "eth_requestAccounts" });
+        } catch (error) {
+          console.log(error);
+        }
+        const accounts = await window.ethereum.request({
+          method: "eth_accounts",
+        });
+        this.address = accounts[0];
+      } else {
+        console.log("cannot connect wallet");
+      }
     },
   },
   mounted() {
     setTimeout(() => {
       const token = localStorageService.getService().getToken();
       const user = jwt_decode(token);
-      console.log("user", user);
+      "user", user;
       this.userName = user.name;
     }, 1000);
   },

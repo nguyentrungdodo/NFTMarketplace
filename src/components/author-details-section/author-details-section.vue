@@ -10,14 +10,14 @@
                             <!-- Author -->
                             <div class="author">
                                 <div class="author-thumb avatar-lg">
-                                    <img class="rounded-circle" src="../../assets/img/avatar_8.jpg" alt="">
+                                    <img class="rounded-circle" :src="profile.user.avatar" alt="">
                                 </div>
                             </div>
                         </div>
                         <!-- Card Caption -->
                         <div class="card-caption col-12 p-0">
                             <!-- Card Body -->
-                            <div class="card-body mt-4">
+                            <div  class="card-body mt-4">
                                 <h5 class="mb-3">Artnox</h5>
                                 <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <div class="input-group">
@@ -79,11 +79,11 @@
                         </div>
                     </div>
                     <div class="row items explore-items">
-                        <div class="col-12 col-md-6 item explore-item" data-groups='["art","sports"]'>
+                        <div v-for="media in profile.medias" :key="media.id" class="col-12 col-md-6 item explore-item" data-groups='["art","sports"]'>
                             <div class="card no-hover text-center">
                                 <div class="image-over">
                                     <a href="item-details">
-                                        <img class="card-img-top" src="../../assets/img/auction_1.jpg" alt="">
+                                        <img class="card-img-top" :src="media.image" alt="">
                                     </a>
                                     <!-- Author -->
                                     <a class="author" href="authors">
@@ -97,163 +97,13 @@
                                     <!-- Card Body -->
                                     <div class="card-body mt-4">
                                         <a href="item-details">
-                                            <h5 class="mb-2">Virtual Worlds</h5>
+                                            <h5 class="mb-2">{{media.name}}</h5>
                                         </a>
                                         <span>ERC-729</span>
                                         <hr>
                                         <div class="card-bottom d-flex justify-content-between">
-                                            <span>4.37 BNB</span>
+                                            <span>{{media.price}} BNB</span>
                                             <span><i class="icon-heart mr-2"></i>154</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 item explore-item" data-groups='["music"]'>
-                            <div class="card no-hover text-center">
-                                <div class="image-over">
-                                    <a href="item-details">
-                                        <img class="card-img-top" src="../../assets/img/auction_2.jpg" alt="">
-                                    </a>
-                                    <!-- Author -->
-                                    <a class="author" href="authors">
-                                        <div class="author-thumb avatar-lg">
-                                            <img class="rounded-circle" src="../../assets/img/avatar_2.jpg" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- Card Caption -->
-                                <div class="card-caption col-12 p-0">
-                                    <!-- Card Body -->
-                                    <div class="card-body mt-4">
-                                        <a href="item-details">
-                                            <h5 class="mb-2">Walking On Air</h5>
-                                        </a>
-                                        <span>ERC-543</span>
-                                        <hr>
-                                        <div class="card-bottom d-flex justify-content-between">
-                                            <span>2.37 BNB</span>
-                                            <span><i class="icon-heart mr-2"></i>74</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 item explore-item" data-groups='["music","collectibles"]'>
-                            <div class="card no-hover text-center">
-                                <div class="image-over">
-                                    <a href="item-details">
-                                        <img class="card-img-top" src="../../assets/img/auction_3.jpg" alt="">
-                                    </a>
-                                    <!-- Author -->
-                                    <a class="author" href="authors">
-                                        <div class="author-thumb avatar-lg">
-                                            <img class="rounded-circle" src="../../assets/img/avatar_3.jpg" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- Card Caption -->
-                                <div class="card-caption col-12 p-0">
-                                    <!-- Card Body -->
-                                    <div class="card-body mt-4">
-                                        <a href="item-details">
-                                            <h5 class="mb-2">Trading Cards</h5>
-                                        </a>
-                                        <span>ERC-932</span>
-                                        <hr>
-                                        <div class="card-bottom d-flex justify-content-between">
-                                            <span>1.89 BNB</span>
-                                            <span><i class="icon-heart mr-2"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 item explore-item" data-groups='["music","sports","art","collectibles"]'>
-                            <div class="card no-hover text-center">
-                                <div class="image-over">
-                                    <a href="item-details">
-                                        <img class="card-img-top" src="../../assets/img/auction_4.jpg" alt="">
-                                    </a>
-                                    <!-- Author -->
-                                    <a class="author" href="authors">
-                                        <div class="author-thumb avatar-lg">
-                                            <img class="rounded-circle" src="../../assets/img/avatar_4.jpg" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- Card Caption -->
-                                <div class="card-caption col-12 p-0">
-                                    <!-- Card Body -->
-                                    <div class="card-body mt-4">
-                                        <a href="item-details">
-                                            <h5 class="mb-2">Sports</h5>
-                                        </a>
-                                        <span>ERC-250</span>
-                                        <hr>
-                                        <div class="card-bottom d-flex justify-content-between">
-                                            <span>0.74 BNB</span>
-                                            <span><i class="icon-heart mr-2"></i>184</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 item explore-item" data-groups='["sports","art","music"]'>
-                            <div class="card no-hover text-center">
-                                <div class="image-over">
-                                    <a href="item-details">
-                                        <img class="card-img-top" src="../../assets/img/auction_5.jpg" alt="">
-                                    </a>
-                                    <!-- Author -->
-                                    <a class="author" href="authors">
-                                        <div class="author-thumb avatar-lg">
-                                            <img class="rounded-circle" src="../../assets/img/avatar_5.jpg" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- Card Caption -->
-                                <div class="card-caption col-12 p-0">
-                                    <!-- Card Body -->
-                                    <div class="card-body mt-4">
-                                        <a href="item-details">
-                                            <h5 class="mb-2">Cartoon Heroes</h5>
-                                        </a>
-                                        <span>ERC-167</span>
-                                        <hr>
-                                        <div class="card-bottom d-flex justify-content-between">
-                                            <span>4.23 BNB</span>
-                                            <span><i class="icon-heart mr-2"></i>126</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 item explore-item" data-groups='["art","sports"]'>
-                            <div class="card no-hover text-center">
-                                <div class="image-over">
-                                    <a href="item-details">
-                                        <img class="card-img-top" src="../../assets/img/auction_6.jpg" alt="">
-                                    </a>
-                                    <!-- Author -->
-                                    <a class="author" href="authors">
-                                        <div class="author-thumb avatar-lg">
-                                            <img class="rounded-circle" src="../../assets/img/avatar_6.jpg" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- Card Caption -->
-                                <div class="card-caption col-12 p-0">
-                                    <!-- Card Body -->
-                                    <div class="card-body mt-4">
-                                        <a href="item-details">
-                                            <h5 class="mb-2">Domain Names</h5>
-                                        </a>
-                                        <span>ERC-037</span>
-                                        <hr>
-                                        <div class="card-bottom d-flex justify-content-between">
-                                            <span>3.41 BNB</span>
-                                            <span><i class="icon-heart mr-2"></i>23</span>
                                         </div>
                                     </div>
                                 </div>
@@ -267,8 +117,27 @@
 </template>
 
 <script>
-export default {
+import { mapGetters, mapActions } from "vuex";
 
+export default {
+ data() {
+    return {
+      // isShow: false,
+    };
+  },
+  methods: {
+    ...mapActions({
+      getMe: "user/ACT_GET_ME",
+    }),
+  }, 
+  computed: {
+    ...mapGetters({
+      profile: "user/GET_ME",
+    }),
+  },
+  created() {
+    this.getMe();
+  },
 }
 </script>
 

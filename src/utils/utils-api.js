@@ -30,6 +30,10 @@ service.interceptors.response.use(
       router.replace({ path: '/error404' });
       return;
     }
+    if (error?.response?.status === 403 ||error?.response?.status === 401 ) {
+      router.replace({ path: '/login' });
+      return;
+    }
     return Promise.reject(error);
   }
 );

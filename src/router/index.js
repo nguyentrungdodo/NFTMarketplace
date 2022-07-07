@@ -10,6 +10,9 @@ import ActivityView from '../views/ActivityView.vue'
 import BlogDetails from '../views/blog-details.vue'
 import HelpCenter from '../views/HelpCenterView.vue'
 import Signup from '../views/signup.vue'
+import EditBlog from '../components/edit-section/edit-blog.vue';
+import CreateProduct from '../components/create-section/create-section';
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,7 +32,7 @@ const routes = [
   {
     path: '/create-product',
     name: 'create-product',
-    component: () => import( '../components/create-section/create-section.vue')
+    component:CreateProduct
   },
   {
     path: '/create-blog',
@@ -37,9 +40,9 @@ const routes = [
     component: () => import( '../components/create-section/create-blog.vue')
   },
   {
-    path: '/edit-blog',
+    path: '/edit-blog/:id',
     name: 'edit-blog',
-    component: () => import( '../components/edit-section/edit-blog.vue')
+    component: EditBlog
   },
   {
     path: '/item-detail/:id',
