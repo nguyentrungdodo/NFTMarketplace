@@ -1,6 +1,6 @@
 const state = {
-  templateList: [],
-  template: null,
+  blogs: [],
+  blog:null,
 };
 
 export default state;

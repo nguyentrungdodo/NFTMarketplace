@@ -37,6 +37,7 @@
                     name="password"
                     placeholder="Enter your Password"
                     required="required"
+                     v-on:keyup.enter="handleLogin"
                   />
                 </div>
               </div>
@@ -58,7 +59,10 @@
                 </div>
               </div>
               <div class="col-12">
-                <button class="btn w-100 mt-3 mt-sm-4" @click.prevent="handleLogin">
+                <button
+                  class="btn w-100 mt-3 mt-sm-4"
+                  @click.prevent="handleLogin"
+                >
                   Sign In
                 </button>
               </div>
@@ -104,7 +108,7 @@
 </template>
 
 <script>
-import {  mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   name: "LoginSection",
@@ -118,17 +122,17 @@ export default {
     ...mapActions({
       login: "user/ACT_LOGIN",
     }),
-   async  handleLogin  (){
-        const formData = {
-            email:this.email,
-            password:this.password
-        }
-        const result =await this.login(formData)
-        if(result){
-            this.$routerP.replace({name:'home'})
-        }
-        console.log('result',result);
-    }
+    async handleLogin() {
+      const formData = {
+        email: this.email,
+        password: this.password,
+      };
+      const result = await this.login(formData);
+      if (result) {
+        this.$router.replace('/');
+      }
+      console.log("result", result);
+    },
   },
 };
 </script>

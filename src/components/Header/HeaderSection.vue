@@ -131,6 +131,16 @@
               ><i class="icon-wallet mr-md-2"></i>Wallet Connect</a
             >
           </li>
+          <li v-if="!userName" class="nav-item iconLogin">
+            <a href="/login" class="nav-link"><span>Login</span> </a>
+          </li>
+          <li v-if="userName" class="nav-item ml-3">
+            <a href="">
+              <i class="fas fa-user"></i>
+              <span class="ml-2">{{ userName }}</span>
+              <i @click="handleLogout" class="fas fa-sign-out-alt ml-2"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -138,20 +148,28 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import jwt_decode from "jwt-decode";
+
+import localStorageService from "@/utils/localStorage.js";
 export default {
   name: "HeaderSection",
-  data() { 
+  data() {
     return {
       isOnTop: false,
       haveBackground: false,
       position: window.top.scrollY,
+      userName: "",
     };
   },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
+
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
+  },
+  computed: {
+    ...mapGetters({
+      user: "user/GET_USER",
+    }),
   },
   methods: {
     handleScroll: function () {
@@ -159,15 +177,30 @@ export default {
       if (scroll < this.position) {
         this.haveBackground = true;
       } else if (scroll > this.position) {
-        this.haveBackground = false
+        this.haveBackground = false;
       }
       // console.log(this.haveBackground)
       // console.log(this.position)
-      this.position = scroll
+      this.position = scroll;
     },
     handleMouseDown() {
       console.log("mouse");
     },
+    handleLogout() {
+      localStorageService.getService().clearToken();
+      this.$router.reppace('/home');
+    },
+  },
+  mounted() {
+    setTimeout(() => {
+      const token = localStorageService.getService().getToken();
+      const user = jwt_decode(token);
+      console.log("user", user);
+      this.userName = user.name;
+    }, 1000);
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
   },
 };
 </script>
@@ -178,5 +211,12 @@ export default {
   /* opacity: 0;
   transition: 1s;
     */
+}
+.iconLogin a i {
+  margin-left: 8px;
+}
+.iconLogin a p {
+  margin-left: 8px;
+  margin-top: 0px !important;
 }
 </style>

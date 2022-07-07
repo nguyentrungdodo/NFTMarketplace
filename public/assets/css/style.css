@@ -2541,6 +2541,7 @@ header .navbar-expand .dropdown:hover > .dropdown-menu {
 .image-over {
   overflow: hidden;
   border-radius: 2px;
+  height: 228px;
 }
 
 .bg-overlay {

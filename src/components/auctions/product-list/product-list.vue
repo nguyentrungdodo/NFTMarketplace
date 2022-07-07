@@ -18,7 +18,6 @@
             <div class="auctions-slides ">
                 <div class="swiper-container slider-mid items">
                     <div class="swiper-wrapper row">
-                      
                         <div v-for="media in medias" :key="media.id" class="swiper-slide item col-4">
                             <div @click="$router.push({name:'media-detail',params:{id:media.id}})" class="card">
                                 <div class="image-over">
@@ -38,10 +37,10 @@
                                         </a>
                                         <a class="seller d-flex align-items-center my-3" href="item-details">
                                             <img class="avatar-sm rounded-circle" src="../../../assets/img/avatar_3.jpg" alt="">
-                                            <span class="ml-2">@MKHblots</span>
+                                            <span class="ml-2">{{media.user.name}}</span>
                                         </a>
                                         <div class="card-bottom d-flex justify-content-between">
-                                            <span>2.3 BNB</span>
+                                            <span>{{media.price}} BNB</span>
                                             <span>1 of 1</span>
                                         </div>
                                     </div>
@@ -70,7 +69,6 @@ export default {
       getAllMedias: "media/ACT_FETCH_ALL_MEDIA",
     }),
   }, 
-
   computed: {
     ...mapGetters({
       medias: "media/GET_LIST_MEDIA",
@@ -84,6 +82,9 @@ export default {
 
 </script>
     
-<style>
+<style scoped>
+.swiper-slide{
+flex: 0 0 30.333333%
+}
+</style>>
 
-</style>

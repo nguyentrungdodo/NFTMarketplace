@@ -61,13 +61,16 @@ const actions = {
     await updateMediaByFormId(formId, data);
   },
   
-  'media/ACT_CREATE_MEDIA': async (_, payload) => {
+  'media/ACT_CREATE_MEDIA': async ({commit}, payload) => {
    const res =  await createMedia(payload);
    if (res.status === 200) {
     router.replace({name:'home'})
-    alert('create successfully')
+    commit('SET_SNACKBAR', {
+      type: 'success',
+      visible: true,
+      text: 'Create success',
+    });
   } else {
-  
       console.log('errrrrrrrr');
   }
   },

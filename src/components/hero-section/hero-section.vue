@@ -9,7 +9,7 @@
                     <!-- Buttons -->
                     <div class="button-group">
                         <a class="btn btn-bordered-white" href="/explore-one"><i class="icon-rocket mr-2"></i>Explore</a>
-                        <a class="btn btn-bordered-white" @click="$router.push({ name: 'create' })"><i class="icon-note mr-2"></i>Create</a>
+                        <a class="btn btn-bordered-white" @click="$router.push({ name: 'create-product' })"><i class="icon-note mr-2"></i>Create</a>
                     </div>
                 </div>
             </div>

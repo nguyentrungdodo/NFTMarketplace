@@ -1,5 +1,5 @@
 <template>
-  <section class="blog-area load-more">
+  <section class="blog-area pt-0 load-more">
     <div class="container">
       <div class="row items">
         <div class="col-12 col-md-4 item">
@@ -34,6 +34,7 @@
         </div>
         <div class="col-12 col-md-4 item">
           <!-- Single Blog -->
+
           <div class="card blog-card">
             <!-- Blog Thumb -->
             <div class="blog-thumb">
@@ -62,14 +63,23 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 item">
+        <div
+          v-for="blog in blogList"
+          :key="blog.id"
+          class="col-12 col-md-4 item"
+        >
           <!-- Single Blog -->
-          <div class="card blog-card">
+          <div @click="handleOpenPopup(blog.id)" class="icon-delete">
+            <i class="fa fa-remove" aria-hidden="true"></i>
+          </div>
+          <div @click="handleOpenPopup(blog.id)" class="icon-delete icon-edit">
+            <i class="fa fa-edit" aria-hidden="true"></i>
+          </div>
+
+          <div class="card blog-card ">
             <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_3.jpg" alt=""
-              /></a>
+            <div class="blog-thumb mt-3">
+              <a href="blog-single"><img :src="blog.image" alt="" /></a>
             </div>
             <!-- Blog Content -->
             <div class="blog-content">
@@ -77,206 +87,25 @@
               <ul
                 class="meta-info d-flex justify-content-between list-unstyled mt-4"
               >
-                <li>By <a href="author">Sara Scotch</a></li>
+                <li>
+                  By <a href="author">{{ blog.user.name }}</a>
+                </li>
                 <li><a href="blog-single">Jul 17, 2022</a></li>
               </ul>
               <!-- Blog Title -->
               <a href="blog-single">
-                <h4>Save Thousands Of Lives Through This NFT</h4>
+                <h4>{{ blog.title }}</h4>
               </a>
               <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
+                {{ blog.description }}
               </p>
               <!-- Blog Button -->
               <a class="btn content-btn" href="blog-single">Read More</a>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 item">
-          <!-- Single Blog -->
-          <div class="card blog-card">
-            <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_4.jpg" alt=""
-              /></a>
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <!-- Meta Info -->
-              <ul
-                class="meta-info d-flex justify-content-between list-unstyled mt-4"
-              >
-                <li>By <a href="author">John Deo</a></li>
-                <li><a href="blog-single">Aug 22, 2022</a></li>
-              </ul>
-              <!-- Blog Title -->
-              <a href="blog-single">
-                <h4>Golden State announce legacy NFT collection</h4>
-              </a>
-              <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
-              </p>
-              <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 item">
-          <!-- Single Blog -->
-          <div class="card blog-card">
-            <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_5.jpg" alt=""
-              /></a>
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <!-- Meta Info -->
-              <ul
-                class="meta-info d-flex justify-content-between list-unstyled mt-4"
-              >
-                <li>By <a href="author">Yasmin Akter</a></li>
-                <li><a href="blog-single">Mar 19, 2022</a></li>
-              </ul>
-              <!-- Blog Title -->
-              <a href="blog-single">
-                <h4>Control Your Own Top Level Domain on the DNS & ENS</h4>
-              </a>
-              <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
-              </p>
-              <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 item">
-          <!-- Single Blog -->
-          <div class="card blog-card">
-            <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_6.jpg" alt=""
-              /></a>
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <!-- Meta Info -->
-              <ul
-                class="meta-info d-flex justify-content-between list-unstyled mt-4"
-              >
-                <li>By <a href="author">Arham</a></li>
-                <li><a href="blog-single">Jan 31, 2022</a></li>
-              </ul>
-              <!-- Blog Title -->
-              <a href="blog-single">
-                <h4>Klaytn NFTs are coming to NetStorm</h4>
-              </a>
-              <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
-              </p>
-              <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 item">
-          <!-- Single Blog -->
-          <div class="card blog-card">
-            <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_7.jpg" alt=""
-              /></a>
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <!-- Meta Info -->
-              <ul
-                class="meta-info d-flex justify-content-between list-unstyled mt-4"
-              >
-                <li>By <a href="author">Artnox</a></li>
-                <li><a href="blog-single">Mar 05, 2022</a></li>
-              </ul>
-              <!-- Blog Title -->
-              <a href="blog-single">
-                <h4>
-                  NetStorm raises $12M to scale the largest marketplace for NFTs
-                </h4>
-              </a>
-              <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
-              </p>
-              <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 item">
-          <!-- Single Blog -->
-          <div class="card blog-card">
-            <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_8.jpg" alt=""
-              /></a>
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <!-- Meta Info -->
-              <ul
-                class="meta-info d-flex justify-content-between list-unstyled mt-4"
-              >
-                <li>By <a href="author">William</a></li>
-                <li><a href="blog-single">May 12, 2022</a></li>
-              </ul>
-              <!-- Blog Title -->
-              <a href="blog-single">
-                <h4>How to safely purchase NFTs on NetStorm</h4>
-              </a>
-              <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
-              </p>
-              <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 item">
-          <!-- Single Blog -->
-          <div class="card blog-card">
-            <!-- Blog Thumb -->
-            <div class="blog-thumb">
-              <a href="blog-single"
-                ><img src="../../assets/img/blog_9.jpg" alt=""
-              /></a>
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <!-- Meta Info -->
-              <ul
-                class="meta-info d-flex justify-content-between list-unstyled mt-4"
-              >
-                <li>By <a href="author">Johnson</a></li>
-                <li><a href="blog-single">Sep 01, 2022</a></li>
-              </ul>
-              <!-- Blog Title -->
-              <a href="blog-single">
-                <h4>
-                  The beginner’s guide to creating & selling digital art NFTs
-                </h4>
-              </a>
-              <p>
-                Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.
-              </p>
-              <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
-            </div>
-          </div>
-        </div>
-        <cardBlog
+
+        <!-- <cardBlog
           v-for="(blog, index) in blogs"
           :key="index"
           :img="blog.img"
@@ -284,7 +113,7 @@
           :timeCreate="blog.timeCreate"
           :title="blog.title"
           :briefDescription="blog.briefDescription"
-        />
+        /> -->
       </div>
       <div class="row">
         <div class="col-12 text-center">
@@ -294,69 +123,179 @@
         </div>
       </div>
     </div>
+    <!-- <div class="box">
+      <a class="button" href="#popup1">Let me Pop up</a>
+    </div> -->
+
+    <div v-if="dialogDelete" class="overlay">
+      <div class="popup">
+        <h3>Do you want to delete this blog</h3>
+        <a class="close" @click="handleClosePopup" href="#">&times;</a>
+
+        <div class="button-group">
+          <a @click="handleClosePopup" class="btn btn-bordered-white"
+            ><i class="icon-note mr-2"></i>Cancel</a
+          >
+          <a class="btn btn-bordered-white" @click="handleDeleteConfirm"
+            ><i class="icon-rocket mr-2"></i>Delete</a
+          >
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
-import cardBlog from "../card/card-blog.vue";
+import { mapActions, mapGetters } from "vuex";
+// import cardBlog from "../card/card-blog.vue";
 
 export default {
-  components: { cardBlog },
+  // components: { cardBlog },
   data() {
     return {
-      blogs: [
-        {
-          img: "../../assets/img/blog_1.jpg",
-          author: "Junaid Hasan",
-          timeCreate: "Feb 19, 2022",
-          title: "Decentralizing NFT metadata on NetStorm",
-          briefDescription:
-            "Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.",
-        },
-        {
-          img: "../../assets/img/blog_1.jpg",
-          author: "Junaid Hasan",
-          timeCreate: "Feb 19, 2022",
-          title: "Decentralizing NFT metadata on NetStorm",
-          briefDescription:
-            "Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.",
-        },
-        {
-          img: "../../assets/img/blog_1.jpg",
-          author: "Junaid Hasan",
-          timeCreate: "Feb 19, 2022",
-          title: "Decentralizing NFT metadata on NetStorm",
-          briefDescription:
-            "Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.",
-        },
-        {
-          img: "../../assets/img/blog_1.jpg",
-          author: "Junaid Hasan",
-          timeCreate: "Feb 19, 2022",
-          title: "Decentralizing NFT metadata on NetStorm",
-          briefDescription:
-            "Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.",
-        },
-        {
-          img: "../../assets/img/blog_1.jpg",
-          author: "Junaid Hasan",
-          timeCreate: "Feb 19, 2022",
-          title: "Decentralizing NFT metadata on NetStorm",
-          briefDescription:
-            "Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.",
-        },
-        {
-          img: "../../assets/img/blog_1.jpg",
-          author: "Junaid Hasan",
-          timeCreate: "Feb 19, 2022",
-          title: "Decentralizing NFT metadata on NetStorm",
-          briefDescription:
-            "Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.",
-        },
-      ],
+      dialogDelete: false,
+      idBlog: null,
     };
+  },
+  methods: {
+    ...mapActions({
+      getAllBlogs: "blog/ACT_FETCH_ALL_BLOG",
+      deleteBlogById: "blog/ACT_DELETE_BY_ID",
+    }),
+    handleOpenPopup(id) {
+      this.idBlog = id;
+      console.log("11111", id);
+      this.dialogDelete = true;
+    },
+    handleClosePopup() {
+      this.dialogDelete = false;
+    },
+    async handleDeleteConfirm() {
+      console.log("222222222222222", this.idBlog);
+      await this.deleteBlogById(this.idBlog);
+      await this.getAllBlogs();
+      this.dialogDelete = false;
+    },
+  },
+  computed: {
+    ...mapGetters({
+      blogList: "blog/GET_LIST_BLOG",
+    }),
+  },
+  created() {
+    this.getAllBlogs();
   },
 };
 </script>
 
-<style></style>
+<style>
+.blog-thumb {
+  height: 300px;
+}
+.icon-delete {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  color: white;
+  right: 15px;
+  top: 5px;
+  cursor: pointer;
+}
+.icon-delete:hover {
+  opacity: 0.9;
+}
+.blog-card {
+  position: relative;
+}
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06d85f;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06d85f;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+.overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 250px auto;
+  padding: 20px;
+  background-color:#121117;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.popup h3 {
+  margin-top: 15px;
+  color: #ffffff;
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: center;
+}
+.popup .close {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  transition: all 200ms;
+  font-size: 30px !important;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06d85f;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+.button-group a {
+  color: white !important;
+}
+.icon-edit{
+   right:40px;
+   
+}
+.blog-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>

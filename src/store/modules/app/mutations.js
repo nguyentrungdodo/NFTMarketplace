@@ -4,7 +4,7 @@ const mutations = {
     const configSnackBar ={
       icon: 'mdi-alert-circle',
       mode: 'multi-line',
-      timeout: 5000,
+      timeout: 50000,
     }
     switch (snackbar.type) {
       case 'error':

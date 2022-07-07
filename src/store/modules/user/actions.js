@@ -44,20 +44,31 @@ const actions = {
         commit("user/MUTATE_SET_SIGNIN", res.data);
         console.log(res.data.token);
         localStorage.setToken(res.data.token);
+        commit('SET_SNACKBAR', {
+          type: 'success',
+          visible: true,
+          text: 'Login success',
+        });
         return true
       }
     } catch (err) {
+      
       return false;
     }
   },
   "user/ACT_SIGNUP": async ({commit}, payload) => {
     try {
+      commit('SET_SNACKBAR', {
+        type: 'success',
+        visible: true,
+        text: 'Signup success',
+      });
       const res = await signup(payload);
       console.log("res", res);
       if (res.status === 200) {
-        // commit("user/MUTATE_SET_SIGNIN", res.data);
-        // console.log(res.data.token);
-        // localStorage.setToken(res.data.token);
+        commit("user/MUTATE_SET_SIGNIN", res.data);
+        console.log(res.data.token);
+        localStorage.setToken(res.data.token);
         console.log('okkkk'); 
         commit('SET_SNACKBAR', {
           type: 'success',

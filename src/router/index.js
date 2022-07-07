@@ -27,9 +27,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/create',
-    name: 'create',
+    path: '/create-product',
+    name: 'create-product',
     component: () => import( '../components/create-section/create-section.vue')
+  },
+  {
+    path: '/create-blog',
+    name: 'create-blog',
+    component: () => import( '../components/create-section/create-blog.vue')
+  },
+  {
+    path: '/edit-blog',
+    name: 'edit-blog',
+    component: () => import( '../components/edit-section/edit-blog.vue')
   },
   {
     path: '/item-detail/:id',
