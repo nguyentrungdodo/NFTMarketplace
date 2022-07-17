@@ -23,10 +23,10 @@
             <div class="card-caption col-12 p-0">
               <!-- Card Body -->
               <div class="card-body mt-4">
-                <h5 class="mb-3">Artnox</h5>
+                <!-- <h5 class="mb-3">Artnox</h5>
                 <p class="my-3">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
+                </p> -->
                 <div class="input-group">
                   <input
                     type="text"

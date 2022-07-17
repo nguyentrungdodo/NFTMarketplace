@@ -15,7 +15,7 @@
                 <div class="col-12">
                     <!-- FAQ Content -->
                     <div class="faq-content">
-                        <!-- Netstorm Accordion -->
+                        <!-- DODONFT Accordion -->
                         <div class="accordion" id="netstorm-accordion">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-10">
@@ -25,7 +25,7 @@
                                         <div class="card-header bg-inherit border-0 p-0">
                                             <h2 class="m-0">
                                                 <button class="btn d-block text-left w-100 py-4" type="button" data-toggle="collapse" data-target="#collapseOne">
-                                                    How do I create an NetStorm account?
+                                                    How do I create an DodoNFT account?
                                                 </button>
                                             </h2>
                                         </div>
@@ -59,7 +59,7 @@
                                         <div class="card-header bg-inherit border-0 p-0">
                                             <h2 class="m-0">
                                                 <button class="btn d-block text-left w-100 collapsed py-4" type="button" data-toggle="collapse" data-target="#collapseThree">
-                                                    How do royalties work on NetStorm?
+                                                    How do royalties work on DodoNFT?
                                                 </button>
                                             </h2>
                                         </div>

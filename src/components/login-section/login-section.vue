@@ -131,7 +131,6 @@ export default {
       if (result) {
         this.$router.replace('/');
       }
-      ("result", result);
     },
   },
 };

@@ -86,7 +86,7 @@ const routes = [
     component: ActivityView
   },
   {
-    path: '/blog-detail',
+    path: '/blog-details',
     component: BlogDetails
   },
   {

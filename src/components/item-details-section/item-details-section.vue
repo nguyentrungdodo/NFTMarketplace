@@ -13,7 +13,7 @@
                 data-date="2022-03-30"
               ></div>
             </div>
-            <!-- Netstorm Tab -->
+            <!-- DodoNFT Tab -->
             <ul class="netstorm-tab nav nav-tabs" id="nav-tab">
               <li>
                 <a

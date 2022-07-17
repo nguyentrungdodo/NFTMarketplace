@@ -1,9 +1,18 @@
 <template>
   <section class="blog-area pt-0 load-more">
     <div class="container">
+      <div class="search-box">
+        <input
+          v-model="keySearch"
+          class=""
+          id="search"
+          type="search"
+          placeholder="Search..."
+        />
+      </div>
       <div class="row items">
         <div
-          v-for="blog in blogList"
+          v-for="blog in searchBlogList()"
           :key="blog.id"
           class="col-12 col-md-4 item"
         >
@@ -15,10 +24,10 @@
             <i class="fa fa-edit" aria-hidden="true"></i>
           </div>
 
-          <div class="card blog-card ">
+          <div class="card blog-card">
             <!-- Blog Thumb -->
             <div class="blog-thumb mt-3">
-              <a href="blog-single"><img :src="blog.image" alt="" /></a>
+              <a href="/blog-details"><img :src="blog.image" alt="" /></a>
             </div>
             <!-- Blog Content -->
             <div class="blog-content">
@@ -29,17 +38,17 @@
                 <li>
                   By <a href="author">{{ blog.user.name }}</a>
                 </li>
-                <li><a href="blog-single">Jul 17, 2022</a></li>
+                <li><a href="/blog-details">Jul 17, 2022</a></li>
               </ul>
               <!-- Blog Title -->
-              <a href="blog-single">
+              <a href="/blog-details">
                 <h4>{{ blog.title }}</h4>
               </a>
               <p>
                 {{ blog.description }}
               </p>
               <!-- Blog Button -->
-              <a class="btn content-btn" href="blog-single">Read More</a>
+              <a class="btn content-btn" href="/blog-details">Read More</a>
             </div>
           </div>
         </div>
@@ -52,14 +61,17 @@
           :title="blog.title"
           :briefDescription="blog.briefDescription"
         /> -->
+        <div class="not-found" v-if="!searchBlogList.length">
+          There is no result for this
+        </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-12 text-center">
           <a id="load-btn" class="btn btn-bordered-white mt-5" href="#"
             >Load More</a
           >
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- <div class="box">
       <a class="button" href="#popup1">Let me Pop up</a>
@@ -68,7 +80,7 @@
     <div v-if="dialogDelete" class="overlay">
       <div class="popup">
         <h3>Do you want to delete this blog</h3>
-        <a class="close" @click="handleClosePopup" >&times;</a>
+        <a class="close" @click="handleClosePopup">&times;</a>
 
         <div class="button-group">
           <a @click="handleClosePopup" class="btn btn-bordered-white"
@@ -84,15 +96,17 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions } from "vuex";
 // import cardBlog from "../card/card-blog.vue";
-
+import { fetchAllBLog } from "@/api/blog";
 export default {
   // components: { cardBlog },
   data() {
     return {
       dialogDelete: false,
       idBlog: null,
+      blogList: [],
+      keySearch: "",
     };
   },
   methods: {
@@ -107,27 +121,47 @@ export default {
     handleClosePopup() {
       this.dialogDelete = false;
     },
+
+    async actFetchAllBlog() {
+      const { data } = await fetchAllBLog();
+      this.blogList = data;
+      console.log({ data });
+    },
     async handleDeleteConfirm() {
       await this.deleteBlogById(this.idBlog);
-      await this.getAllBlogs();
+      await this.actFetchAllBlog();
       this.dialogDelete = false;
     },
-    handleEdit(id){
-      this.$router.push({name:'edit-blog',params:{id}})
-    }
+    handleEdit(id) {
+      this.$router.push({ name: "edit-blog", params: { id } });
+    },
+    searchBlogList() {
+      console.log("key", this.keySearch);
+      if (!this.keySearch) {
+        console.log("zo");
+        return this.blogList;
+      }
+      return this.blogList.filter(
+        (blog) =>
+          blog.title.toLowerCase().search(this.keySearch.toLowerCase()) !== -1
+      );
+    },
   },
-  computed: {
-    ...mapGetters({
-      blogList: "blog/GET_LIST_BLOG",
-    }),
-  },
+  computed: {},
   created() {
     this.getAllBlogs();
+    this.actFetchAllBlog();
   },
 };
 </script>
 
 <style>
+.not-found {
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
 .blog-thumb {
   height: 300px;
 }
@@ -196,7 +230,7 @@ export default {
 .popup {
   margin: 250px auto;
   padding: 20px;
-  background-color:#121117;
+  background-color: #121117;
   border-radius: 5px;
   width: 30%;
   position: relative;
@@ -228,13 +262,23 @@ export default {
 .button-group a {
   color: white !important;
 }
-.icon-edit{
-   right:40px;
-   
+.icon-edit {
+  right: 40px;
 }
-.blog-thumb img{
+.blog-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.search-box {
+  display: flex;
+  justify-content: end;
+  padding-right: 15px;
+}
+.search-box input {
+  width: 25%;
+  background-color: #fff;
+  border-radius: 0.7rem;
+  color: #2f2f2f;
 }
 </style>

@@ -39,7 +39,7 @@ export default {
         //  imgSrc: "../../assets/img/blog_1.jpg",
         //  author: "Junaid Hasan",
         //  timeCreate: "Feb 19, 2022",
-        //  title: "Decentralizing NFT metadata on NetStorm",
+        //  title: "Decentralizing NFT metadata on DODONFT",
         //  briefDescription: "Lorem ipsum dolor, sit voluptatem consectetur adipisicing elit.",
     };
   },

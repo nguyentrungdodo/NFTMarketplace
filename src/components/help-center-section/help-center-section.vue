@@ -18,7 +18,7 @@
                         <a class="d-block text-center" href="contact">
                             <i class="icon icon-plane text-effect"></i>
                             <h4>Getting Started</h4>
-                            <p>Learn how to create an account, set up your wallet, and what you can do on NetStorm</p>
+                            <p>Learn how to create an account, set up your wallet, and what you can do on DodoNFT</p>
                         </a>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <a class="d-block text-center" href="contact">
                             <i class="icon icon-flag text-effect"></i>
                             <h4>Developers</h4>
-                            <p>Learn how you can develop with NetStorm &amp; sell them on Marketplace</p>
+                            <p>Learn how you can develop with DodoNFT &amp; sell them on Marketplace</p>
                         </a>
                     </div>
                 </div>

@@ -88,7 +88,7 @@
                                     <!-- Author -->
                                     <a class="author" href="authors">
                                         <div class="author-thumb avatar-lg">
-                                            <img class="rounded-circle" src="../../assets/img/avatar_1.jpg" alt="">
+                                            <img class="rounded-circle" :src="profile.user.avatar" alt="">
                                         </div>
                                     </a>
                                 </div>

@@ -14,7 +14,7 @@
             </div>
             <div class="row items">
                 <div class="col-12 col-md-6 col-lg-8">
-                    <!-- Netstorm Tab -->
+                    <!-- DODONFT Tab -->
                     <ul class="netstorm-tab nav nav-tabs" id="nav-tab">
                         <li>
                             <a class="active" id="nav-home-tab" data-toggle="pill" href="#nav-home">
@@ -251,14 +251,14 @@
                                 <div class="widget-content">
                                     <!-- Tags Widget Items -->
                                     <div class="widget-content filter-widget-items mt-3">
-                                        <a href="/explore-two" class="badge tag">Listing</a>
-                                        <a href="/explore-two" class="badge tag">Likes</a>
-                                        <a href="/explore-two" class="badge tag">Purchase</a>
-                                        <a href="/explore-two" class="badge tag">Transfer</a>
-                                        <a href="/explore-two" class="badge tag">Sales</a>
-                                        <a href="/explore-two" class="badge tag">Bids</a>
-                                        <a href="/explore-two" class="badge tag">Burns</a>
-                                        <a href="/explore-two" class="badge tag">Followings</a>
+                                        <a href="/" class="badge tag">Listing</a>
+                                        <a href="/" class="badge tag">Likes</a>
+                                        <a href="/" class="badge tag">Purchase</a>
+                                        <a href="/" class="badge tag">Transfer</a>
+                                        <a href="/" class="badge tag">Sales</a>
+                                        <a href="/" class="badge tag">Bids</a>
+                                        <a href="/" class="badge tag">Burns</a>
+                                        <a href="/" class="badge tag">Followings</a>
                                     </div>
                                 </div>
                             </div>
