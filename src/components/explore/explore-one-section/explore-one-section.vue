@@ -40,7 +40,7 @@
                                     <span>1.5 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                     <span>2.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                                     <span>2.3 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                                     <span>1.8 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                                     <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@
                                     <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                                     <span>3.2 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -243,7 +243,7 @@
                                     <span>0.69 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -272,7 +272,7 @@
                                     <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -301,7 +301,7 @@
                                     <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -330,7 +330,7 @@
                                     <span>3.2 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="item-details"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="item-details"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>
@@ -359,7 +359,7 @@
                                     <span>0.69 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
-                                <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a>
+                                <!-- <a class="btn btn-bordered-white btn-smaller mt-3" href="login"><i class="icon-handbag mr-2"></i>Place a Bid</a> -->
                             </div>
                         </div>
                     </div>

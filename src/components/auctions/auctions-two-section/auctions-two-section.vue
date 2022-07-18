@@ -34,7 +34,7 @@
                                     <span class="ml-2">@Richard</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.5 BNB</span>
+                                    <span>1.5 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                     <span class="ml-2">@JohnDeo</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>2.7 BNB</span>
+                                    <span>2.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                     <span class="ml-2">@MKHblots</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>2.3 BNB</span>
+                                    <span>2.3 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@
                                     <span class="ml-2">@RioArham</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.8 BNB</span>
+                                    <span>1.8 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@
                                     <span class="ml-2">@ArtNox</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.7 BNB</span>
+                                    <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -179,7 +179,7 @@
                                     <span class="ml-2">@ArtNox</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.7 BNB</span>
+                                    <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -208,7 +208,7 @@
                                     <span class="ml-2">@ArtNox</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.7 BNB</span>
+                                    <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -237,7 +237,7 @@
                                     <span class="ml-2">@ArtNox</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.7 BNB</span>
+                                    <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -266,7 +266,7 @@
                                     <span class="ml-2">@ArtNox</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.7 BNB</span>
+                                    <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -295,7 +295,7 @@
                                     <span class="ml-2">@ArtNox</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.7 BNB</span>
+                                    <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -324,7 +324,7 @@
                                     <span class="ml-2">@ArtNox</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.7 BNB</span>
+                                    <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>
@@ -353,7 +353,7 @@
                                     <span class="ml-2">@ArtNox</span>
                                 </a>
                                 <div class="card-bottom d-flex justify-content-between">
-                                    <span>1.7 BNB</span>
+                                    <span>1.7 ETH</span>
                                     <span>1 of 1</span>
                                 </div>
                             </div>

@@ -6,7 +6,11 @@
           <!-- Author Profile -->
           <div class="card no-hover text-center">
             <div class="image-over">
-              <img class="card-img-top" :src="uploadImage?uploadImage:'assets/img/auction_2.jpg'" alt="" />
+              <img
+                class="card-img-top"
+                :src="uploadImage ? uploadImage : 'assets/img/auction_2.jpg'"
+                alt=""
+              />
               <!-- Author -->
               <div class="author">
                 <!-- <div class="author-thumb avatar-lg">
@@ -16,7 +20,7 @@
                     alt=""
                   />
                 </div> -->
-              <!-- nho mo unlock ra -->
+                <!-- nho mo unlock ra -->
               </div>
             </div>
             <!-- Card Caption -->
@@ -131,7 +135,10 @@
               </div>
 
               <div class="col-12">
-                <button @click.prevent="handleCreate()" class="btn w-100 mt-3 mt-sm-4" >
+                <button
+                  @click.prevent="handleCreate()"
+                  class="btn w-100 mt-3 mt-sm-4"
+                >
                   Create Blog
                 </button>
               </div>
@@ -144,8 +151,8 @@
 </template>
 
 <script>
-import {  mapActions } from "vuex";
-import uploadCloudinary from "@/api/cloudinary"
+import { mapActions } from "vuex";
+import uploadCloudinary from "@/api/cloudinary";
 export default {
   name: "CreateSection",
   components: {},
@@ -153,28 +160,32 @@ export default {
     return {
       title: "",
       description: "",
-      uploadImage:"",
+      uploadImage: "",
     };
   },
   methods: {
     ...mapActions({
       createBlog: "blog/ACT_CREATE_BLOG",
+      getMe: "user/ACT_GET_ME",
     }),
-    handleCreate(){
-        const media = {
-            title:this.title,
-            description:this.description,
-            image:this.uploadImage,
-        }
-        this.createBlog(media);
+    handleCreate() {
+      const media = {
+        title: this.title,
+        description: this.description,
+        image: this.uploadImage,
+      };
+      this.createBlog(media);
     },
-    async handleImageUpload (){
-      const file = document.getElementById('files').files[0];
+    async handleImageUpload() {
+      const file = document.getElementById("files").files[0];
       // const url = `${process.env.VUE_APP_SERVER}/form/upload/${this.$route.params.id}`;
       const res = await uploadCloudinary(file);
-      this.uploadImage  = res.data.secure_url;
-    //   this.$emit('closeLoader');
-    }
+      this.uploadImage = res.data.secure_url;
+      // this.$emit('closeLoader');
+    },
+  },
+  created() {
+    this.getMe();
   },
 };
 </script>

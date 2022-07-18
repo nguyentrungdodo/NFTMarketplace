@@ -5,7 +5,12 @@
         <div class="col-12 col-lg-5">
           <div class="item-info">
             <div class="item-thumb text-center">
-              <img :src="media.image?media.image:'../../assets/img/auction_2.jpg'" alt="" />
+              <img
+                :src="
+                  media.image ? media.image : '../../assets/img/auction_2.jpg'
+                "
+                alt=""
+              />
             </div>
             <div class="card no-hover countdown-times my-4">
               <div
@@ -139,9 +144,9 @@
         <div class="col-12 col-lg-6">
           <!-- Content -->
           <div class="content mt-5 mt-lg-0">
-            <h3 class="m-0">{{media.name}}</h3>
+            <h3 class="m-0">{{ media.name }}</h3>
             <p>
-            {{media.description}}
+              {{ media.description }}
             </p>
             <!-- Owner -->
             <div class="owner d-flex align-items-center">
@@ -152,29 +157,25 @@
               >
                 <img
                   class="avatar-sm rounded-circle"
-                  src="../../assets/img/avatar_1.jpg"
+                  :src="media.user.avatar"
                   alt=""
                 />
-                <h6 class="ml-2">Do Do</h6>
+                <h6 class="ml-2">{{ media.user.name }}</h6>
               </a>
             </div>
             <!-- Item Info List -->
             <div class="item-info-list mt-4">
               <ul class="list-unstyled">
                 <li class="price d-flex justify-content-between">
-                    <span>{{ media.price}}</span>
-                  <span> Current Price  5 ETH</span>
+                  <span>{{ media.price }}</span>
+                  <span> Current Price 5 ETH</span>
                   <span>$500.89</span>
                   <span>1 of 5</span>
                 </li>
-                <li>
-                  <span>Size</span>
-                  <span>14000 x 14000 px</span>
-                </li>
-                <li>
+                <!-- <li>
                   <span>Volume Traded</span>
                   <span>64.1</span>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="row items">
@@ -184,7 +185,7 @@
                     <a href="author">
                       <img
                         class="avatar-md rounded-circle"
-                        src="../../assets/img/avatar_1.jpg"
+                        :src="media.user.avatar"
                         alt=""
                       />
                     </a>
@@ -222,14 +223,17 @@
                   <div
                     class="price d-flex justify-content-between align-items-center"
                   >
-                    <span>2.9 BNB</span>
+                    <span>{{ media.price }} ETH</span>
                     <span>1 of 5</span>
                   </div>
                 </div>
               </div>
             </div>
-            <a class="d-block btn btn-bordered-white mt-4" href="wallet-connect"
-              >Place a Bid</a
+            <a
+              @click.prevent="handleBuy()"
+              class="d-block btn btn-bordered-white mt-4"
+              href="wallet-connect"
+              >Buy It</a
             >
           </div>
         </div>
@@ -239,13 +243,69 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-
+import { ethers } from "ethers";
+import contractAddress from "@/contract/contractAddress";
+import NFTMarketPlace from "@/contract/NFTMarketplace.json";
+import axios from "axios";
 export default {
-  computed: {
-    ...mapGetters({
-      media: "media/GET_MEDIA_BY_ID",
-    }),
+  data() {
+    return {
+      // isShow: false,
+      media: null,
+    };
+  },
+  computed: {},
+  methods: {
+    async handleBuy() {
+      console.log("this", this.media);
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(
+        contractAddress,
+        NFTMarketPlace.abi,
+        signer
+      );
+      const price = ethers.utils.parseUnits(
+        this.media.price.toString(),
+        "ether"
+      );
+      console.log({price});
+      const transaction = await contract.createMarketSale(+this.media.tokenId, {
+        value: price,
+      });
+      const result = await transaction.wait();
+      if(result) this.$router.push('/')
+      console.log({result});
+    },
+  },
+  async created() {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(
+      contractAddress,
+      NFTMarketPlace.abi,
+      signer
+    );
+    const tokenUri = await contract.tokenURI(this.$route.params.id);
+    let data = await contract.fetchMarketItems();
+    const currentMedia = data.find(
+      (media) => media.tokenId.toNumber() === +this.$route.params.id
+    );
+    console.log({currentMedia});
+    const meta = await axios.get(tokenUri);
+    const dataMedia = await axios.post("http://localhost:3000/media/cloud", {
+      image: meta.data.image,
+    });
+    console.log({ dataMedia });
+    const finalMedia = {
+      ...dataMedia.data,
+      seller: currentMedia.seller,
+      owner: currentMedia.owner,
+      price: ethers.utils.formatUnits(currentMedia.price.toString(), "ether"),
+      tokenId:currentMedia.tokenId.toNumber()
+    };
+    this.media = finalMedia;
+    console.log("final", finalMedia);
   },
 };
 </script>

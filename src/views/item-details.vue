@@ -29,5 +29,4 @@ export default {
   },
 };
 </script>
-c
 <style></style>

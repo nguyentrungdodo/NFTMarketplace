@@ -59,14 +59,17 @@
                 <a href="/blogs" class="nav-link">Blog</a>
               </li>
               <li class="nav-item">
-                <a href="/blog-single" class="nav-link">Blog Single</a>
+                <a href="/blog-details" class="nav-link">Blog Single</a>
               </li>
               <li class="nav-item">
                 <a href="/help-center" class="nav-link">Help Center</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a href="/authors" class="nav-link">Authors</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link" href="#"
               >Pages <i class="fas fa-angle-down ml-1"></i
             ></a>
@@ -77,10 +80,9 @@
               <li class="nav-item">
                 <a href="/author-detail" class="nav-link">Author</a>
               </li>
-              <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a href="/wallet-connect" class="nav-link">Wallet Connect</a>
-              </li> -->
-              <!-- nho mo ra -->
+              </li>
               <li class="nav-item">
                 <a href="/create" class="nav-link">Create</a>
               </li>
@@ -91,7 +93,7 @@
                 <a href="/signup" class="nav-link">Signup</a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="/contact" class="nav-link">Contact</a>
           </li>
@@ -140,7 +142,7 @@
             <a href="/login" class="nav-link"><span>Login</span> </a>
           </li>
           <li v-if="userName" class="nav-item ml-3">
-            <a href="">
+            <a href="/author-detail">
               <i class="fas fa-user"></i>
               <span class="ml-2">{{ userName }}</span>
               <i @click="handleLogout" class="fas fa-sign-out-alt ml-2"></i>

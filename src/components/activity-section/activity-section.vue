@@ -46,7 +46,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Walking On Air</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>14 ETH</strong> 4 hours ago <br>by <a href="author">@arham</a></p>
+                                        <p class="m-0">Buy listed for <strong>14 ETH</strong> 4 hours ago <br>by <a href="author">@arham</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -59,7 +59,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Virtual Worlds</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>10 ETH</strong> 8 hours ago by <a href="author">@junaid</a></p>
+                                        <p class="m-0">Buy listed for <strong>10 ETH</strong> 8 hours ago by <a href="author">@junaid</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -72,7 +72,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Collectibles</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>12 ETH</strong> 3 hours ago <br>by <a href="author">@yasmin</a></p>
+                                        <p class="m-0">Buy listed for <strong>12 ETH</strong> 3 hours ago <br>by <a href="author">@yasmin</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -85,7 +85,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Digital Arts</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>22 ETH</strong> 9 hours ago <br>by <a href="author">@john</a></p>
+                                        <p class="m-0">Buy listed for <strong>22 ETH</strong> 9 hours ago <br>by <a href="author">@john</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -98,7 +98,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Design Illusions</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>42 ETH</strong> 7 hours ago by <a href="author">@william</a></p>
+                                        <p class="m-0">Buy listed for <strong>42 ETH</strong> 7 hours ago by <a href="author">@william</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -111,7 +111,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Industrial</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>36 ETH</strong> 10 hours ago <br>by <a href="author">@sara</a></p>
+                                        <p class="m-0">Buy listed for <strong>36 ETH</strong> 10 hours ago <br>by <a href="author">@sara</a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -128,7 +128,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Virtual Worlds</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>10 ETH</strong> 8 hours ago <br>by <a href="author">@junaid</a></p>
+                                        <p class="m-0">Buy listed for <strong>10 ETH</strong> 8 hours ago <br>by <a href="author">@junaid</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -141,7 +141,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Collectibles</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>12 ETH</strong> 3 hours ago by <a href="author">@yasmin</a></p>
+                                        <p class="m-0">Buy listed for <strong>12 ETH</strong> 3 hours ago by <a href="author">@yasmin</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -154,7 +154,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Digital Arts</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>22 ETH</strong> 9 hours ago <br>by <a href="author">@john</a></p>
+                                        <p class="m-0">Buy listed for <strong>22 ETH</strong> 9 hours ago <br>by <a href="author">@john</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -167,7 +167,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Photography</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>69 ETH</strong> 12 hours ago <br>by <a href="author">@junaid</a></p>
+                                        <p class="m-0">Buy listed for <strong>69 ETH</strong> 12 hours ago <br>by <a href="author">@junaid</a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -184,7 +184,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Design Illusions</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>10 ETH</strong> 8 hours ago <br>by <a href="author">@junaid</a></p>
+                                        <p class="m-0">Buy listed for <strong>10 ETH</strong> 8 hours ago <br>by <a href="author">@junaid</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -197,7 +197,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Digital Arts</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>12 ETH</strong> 3 hours ago by <a href="author">@yasmin</a></p>
+                                        <p class="m-0">Buy listed for <strong>12 ETH</strong> 3 hours ago by <a href="author">@yasmin</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -210,7 +210,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Photography</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>22 ETH</strong> 9 hours ago <br>by <a href="author">@john</a></p>
+                                        <p class="m-0">Buy listed for <strong>22 ETH</strong> 9 hours ago <br>by <a href="author">@john</a></p>
                                     </div>
                                 </li>
                                 <!-- Single Tab List -->
@@ -223,7 +223,7 @@
                                         <a href="item-details">
                                             <h5 class="mt-0 mb-2">Virtual Worlds</h5>
                                         </a>
-                                        <p class="m-0">Bid listed for <strong>69 ETH</strong> 12 hours ago <br>by <a href="author">@junaid</a></p>
+                                        <p class="m-0">Buy listed for <strong>69 ETH</strong> 12 hours ago <br>by <a href="author">@junaid</a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -256,7 +256,7 @@
                                         <a href="/" class="badge tag">Purchase</a>
                                         <a href="/" class="badge tag">Transfer</a>
                                         <a href="/" class="badge tag">Sales</a>
-                                        <a href="/" class="badge tag">Bids</a>
+                                        <a href="/" class="badge tag">Buys</a>
                                         <a href="/" class="badge tag">Burns</a>
                                         <a href="/" class="badge tag">Followings</a>
                                     </div>

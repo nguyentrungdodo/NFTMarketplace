@@ -1,5 +1,4 @@
-import { save,getOne, fetchMedia, updateMediaByFormId,createMedia } from '@/api/media';
-import router from '@/router';
+ import { save,getOne, fetchMedia, updateMediaByFormId,createMedia } from '@/api/media';
 
 const actions = {
   'media/ACT_SAVE_MEDIA': async (_, payload) => {
@@ -21,7 +20,7 @@ const actions = {
       commit('media/MUTATE_SET_MEDIA',data);
     } else {
       if (res.status === 204) {
-        commit('media/MUTATE_SET_MEDIA', []);
+        commit('media/MUTATE_SET_MEDIA', []) ;
       }
     }
   },
@@ -58,12 +57,12 @@ const actions = {
   'media/ACT_CREATE_MEDIA': async ({commit}, payload) => {
    const res =  await createMedia(payload);
    if (res.status === 200) {
-    router.replace({name:'home'})
     commit('SET_SNACKBAR', {
       type: 'success',
       visible: true,
       text: 'Create success',
     });
+    return res.data;
   } else {
       console.log('errrrrrrrr');
   }

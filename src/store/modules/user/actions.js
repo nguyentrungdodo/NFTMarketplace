@@ -87,11 +87,6 @@ const actions = {
       console.log("111111111111111111111", res);
       if (res.status === 200) {
         commit("user/MUTATE_SET_ME", res.data);
-        commit("SET_SNACKBAR", {
-          type: "success",
-          visible: true,
-          text: "Signup success",
-        });
         return true;
       }
     } catch (err) {

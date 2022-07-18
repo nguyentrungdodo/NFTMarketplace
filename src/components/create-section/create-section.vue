@@ -6,7 +6,11 @@
           <!-- Author Profile -->
           <div class="card no-hover text-center">
             <div class="image-over">
-              <img class="card-img-top" :src="uploadImage?uploadImage:'assets/img/auction_2.jpg'" alt="" />
+              <img
+                class="card-img-top"
+                :src="uploadImage ? uploadImage : 'assets/img/auction_2.jpg'"
+                alt=""
+              />
               <!-- Author -->
               <div class="author">
                 <!-- <div class="author-thumb avatar-lg">
@@ -16,7 +20,7 @@
                     alt=""
                   />
                 </div> -->
-              <!-- nho mo unlock ra -->
+                <!-- nho mo unlock ra -->
               </div>
             </div>
             <!-- Card Caption -->
@@ -153,11 +157,7 @@
               </div>
               <div class="col-12 col-md-6">
                 <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Size"
-                  />
+                  <input type="text" class="form-control" placeholder="Size" />
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -212,7 +212,10 @@
                 </div>
               </div>
               <div class="col-12">
-                <button @click.prevent="handleCreate()" class="btn w-100 mt-3 mt-sm-4" >
+                <button
+                  @click.prevent="handleCreate()"
+                  class="btn w-100 mt-3 mt-sm-4"
+                >
                   Create Item
                 </button>
               </div>
@@ -225,8 +228,11 @@
 </template>
 
 <script>
-import {  mapActions } from "vuex";
-import uploadCloudinary from "@/api/cloudinary"
+import { mapActions } from "vuex";
+import uploadCloudinary from "@/api/cloudinary";
+import { ethers } from "ethers";
+import contractAddress from "@/contract/contractAddress";
+import NFTMarketPlace from "@/contract/NFTMarketplace.json";
 export default {
   name: "CreateSection",
   components: {},
@@ -236,31 +242,69 @@ export default {
       description: "",
       price: "",
       size: "",
-      uploadImage:"",
+      uploadImage: "",
     };
   },
   methods: {
     ...mapActions({
       createMedia: "media/ACT_CREATE_MEDIA",
+      getMe: "user/ACT_GET_ME",
     }),
-    handleCreate(){
-        const media = {
-            name:this.name,
-            description:this.description,
-            price:this.price,
-            size:this.size,
-            image:this.uploadImage,
-        }
-        this.createMedia(media);
+    async handleCreate() {
+      const media = {
+        name: this.name,
+        description: this.description,
+        price: this.price,
+        size: this.size,
+        image: this.uploadImage,
+      };
+      const tokenUrl = await this.createMedia(media);
+      console.log(tokenUrl);
+      await this.createSale(tokenUrl);
+      this.$router.replace({ name: "home" });
     },
-    async handleImageUpload (){
-      const file = document.getElementById('files').files[0];
+    async createSale(tokenUrl) {
+      try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        console.log('singer',signer);
+        const contract = new ethers.Contract(
+          contractAddress,
+          NFTMarketPlace.abi,
+          signer
+        );
+        console.log(111111);
+        let listingPrice = await contract.getListingPrice();
+        listingPrice = listingPrice.toString();
+        const price = ethers.utils.parseUnits(this.price + "", "ether");
+        let transaction = await contract.createToken(tokenUrl, price, {
+          value: listingPrice,
+        });
+        console.log(22222);
+
+        const recipe = await transaction.wait();
+        console.log({ recipe });
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    async handleImageUpload() {
+      const file = document.getElementById("files").files[0];
       // const url = `${process.env.VUE_APP_SERVER}/form/upload/${this.$route.params.id}`;
-      const res = await uploadCloudinary(file);
-      this.uploadImage  = res.data.secure_url;
-    //   this.$emit('closeLoader');
-    }
+      console.log("contract AD", contractAddress);
+      try {
+        const res = await uploadCloudinary(file);
+        this.uploadImage = res.data.secure_url;
+        console.log(res);
+      } catch (error) {
+        console.log({ error });
+      }
+      //   this.$emit('closeLoader');
+    },
   },
+  created(){
+    this.getMe()
+  }
 };
 </script>
 

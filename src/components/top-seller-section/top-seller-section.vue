@@ -23,7 +23,7 @@
                             <!-- Seller Info -->
                             <div class="seller-info ml-3">
                                 <a class="seller mb-2" href="/author-detail">@Richard</a>
-                                <span>1.5 BNB</span>
+                                <span>1.5 ETH</span>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                             <!-- Seller Info -->
                             <div class="seller-info ml-3">
                                 <a class="seller mb-2" href="/author-detail">@JohnDeo</a>
-                                <span>2.3 BNB</span>
+                                <span>2.3 ETH</span>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <!-- Seller Info -->
                             <div class="seller-info ml-3">
                                 <a class="seller mb-2" href="/author-detail">@Junaid</a>
-                                <span>2.5 BNB</span>
+                                <span>2.5 ETH</span>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                             <!-- Seller Info -->
                             <div class="seller-info ml-3">
                                 <a class="seller mb-2" href="/author-detail">@Yasmin</a>
-                                <span>1.9 BNB</span>
+                                <span>1.9 ETH</span>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                             <!-- Seller Info -->
                             <div class="seller-info ml-3">
                                 <a class="seller mb-2" href="/author-detail">@ArhamH</a>
-                                <span>3.2 BNB</span>
+                                <span>3.2 ETH</span>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                             <!-- Seller Info -->
                             <div class="seller-info ml-3">
                                 <a class="seller mb-2" href="/author-detail">@Sara</a>
-                                <span>4.7 BNB</span>
+                                <span>4.7 ETH</span>
                             </div>
                         </div>
                     </div>
